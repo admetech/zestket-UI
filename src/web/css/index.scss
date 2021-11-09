@@ -1,0 +1,138 @@
+@import 'base';
+@import 'mixins';
+
+html {
+  box-sizing: border-box;
+  width: var(--width-100);
+  height: var(--height-100-pt);
+  line-height: 1.25;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-family: var(--ff-base);
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-regular);
+  color: var(--color-brand);
+  text-rendering: inherit;
+}
+
+img,
+svg {
+  vertical-align: middle;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Hide alt text and empty image
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+
+:not(input):not(textarea):not(button) {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--color-mine-shaft);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  &:focus {
+    outline: none;
+  }
+  
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, var(--color-white) 10%, transparent 10%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform var(--very-slow-transit), opacity var(--slow-transit-3x);
+  }
+  
+  &:active::after {
+    transform: scale(0, 0);
+    opacity: 0.2;
+    transition: 0s;
+  }
+}
+
+.mr-1 { margin-right: 4px }
+.mr-2 { margin-right: 8px }
+.mr-3 { margin-right: 12px }
+.mr-4 { margin-right: 16px }
+.mr-5 { margin-right: 20px }
+.ml-1 { margin-left: 4px }
+.ml-2 { margin-left: 8px }
+.ml-3 { margin-left: 12px }
+.ml-4 { margin-left: 16px }
+.ml-5 { margin-left: 20px }
+.pr-1 { padding-right: 4px }
+.pr-2 { padding-right: 8px }
+.pr-3 { padding-right: 12px }
+.pr-4 { padding-right: 16px }
+.pr-5 { padding-right: 20px }
+.pl-1 { padding-left: 4px }
+.pl-2 { padding-left: 8px }
+.pl-3 { padding-left: 12px }
+.pl-4 { padding-left: 16px }
+.pl-5 { padding-left: 20px }
+
+.shine {
+  background: var(--color-gallery);
+  background-image: linear-gradient(
+    to right,
+    var(--color-gallery) 0%,
+    var(--color-wild-sand) 20%,
+    var(--color-gallery) 40%,
+    var(--color-gallery) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  display: inline-block;
+  position: relative;
+  animation: placeholderShimmer 1s ease-in infinite forwards;
+}
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+  background-color: transparent;
+}

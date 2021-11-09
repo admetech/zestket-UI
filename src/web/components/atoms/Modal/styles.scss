@@ -1,0 +1,62 @@
+/* Convert the below to styled-components */
+
+%showAnimation {
+  animation: show 240ms ease;
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    animation: show 160ms ease;
+  }
+}
+
+%smoothTransition {
+  transition: all 240ms ease-in-out;
+
+  @media screen and (max-width: 576px) {
+    transition: all 160ms ease-in-out;
+  }
+}
+
+.c-modal {
+  &-button {
+    &-negative,
+    &-positive {
+      @extend %smoothTransition;
+      padding: 11px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: transparent;
+      border-radius: 20px;
+      text-align: center;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        @extend %smoothTransition;
+      }
+    }
+
+    &-negative {
+      margin-right: 12px;
+      color: #be3144;
+      border-color: #be3144;
+    }
+
+    &-positive {
+      /* border-color: transparentize($color: #000000, $amount: 0.3); */
+      border-color: transparent;
+      background-color: #be3144;
+      color: #FFF;
+    }
+  }
+}

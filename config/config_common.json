@@ -1,0 +1,37 @@
+{
+  "rootFolder": "/src",
+  "srcFolder": "/src/src",
+  "cloudFolder": "/cloud",
+  "buildFolder": "/build",
+  "app": {
+    "expressport": 3010,
+    "webpackport": 3011,
+    "assets_cdn_base": "https://cdn-deploy.getadme.com/adme-front-end",
+    "images_cdn_base": "cdn-static.getadme.com",
+    "images_cdn": "https://cdn-static.getadme.com",
+    "resizer_cdn_base": "cdn-resizer.getadme.com",
+    "resizer": "https://cdn-resizer.getadme.com",
+    "cdn_cloud": "https://cdn-cloud.getadme.com",
+    "cdn_cloud_base": "cdn-cloud.getadme.com",
+    "site_name": "advertyzement.com",
+    "timezone": "Asia/Kolkata",
+    "socket_io_url": "https://advertyzement.com",
+    "cookie_secret": "",
+    "jwt_client_secret": "",
+    "fb_app_id": "",
+    "twitter_handler": "",
+    "maps_api_key": "",
+    "repo": "adme-front-end"
+  },
+  "aws": {
+    "s3static": {
+      "bucket": "cdn-static.getadme.com",
+      "accessKeyId": "",
+      "secretAccessKey": "",
+      "region": "",
+      "apiVersions": {
+        "s3": ""
+      }
+    }
+  }
+}
